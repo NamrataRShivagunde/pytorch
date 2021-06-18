@@ -1,9 +1,5 @@
-Input  = text file with each sentence in a line
+The python script data-preprocess.py takes in argument filename
 
-	|
+	python data-preprocess.py train.en.txt
 
-data-preprocess
-
-1) creating (dict, dict, list) where each dict maps names to
-    sentence matrices and sizes arrays (first is train, second is validation);
-    the list is the vocabulary
+preprocess_data(filename) method return (train_dict, val_dict, vocab_list)
