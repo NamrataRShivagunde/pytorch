@@ -19,7 +19,7 @@ matcat = torch.cat([mat1, mat2], dim=-0)
 
 #mat * mat-transpose
 multiply_mat = mat1 @ mat1.T
-multiply_elementwise = mat1*mat1
+multiply_elementwise = mat1*mat1.T
 print("matrix is ", mat1)
 print(multiply_mat)
 print(multiply_elementwise)
