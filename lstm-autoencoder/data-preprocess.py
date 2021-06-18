@@ -20,10 +20,19 @@ def preprocess_data(filename):
             # keep track of different size bins, with bins for
             # 1-10, 11-20, 21-30, etc
             top_bin = int(math.ceil(sent_size / 10) * 10)
+            #size_counter is a counter which stores the bins and number of sentences in each bin
             size_counter[top_bin] += 1
+            #roken_counter is a counter which stores tokens and its count
             token_counter.update(tokens)
     
-    print(top_bin)
+    
+    # sort it keeping the order
+    vocabulary = [w for w, count in token_counter.most_common()]
+    vocabulary.insert(0, '</s>')
+    vocabulary.insert(1, '<unk>')
+    #mapping will map the vocabulary to a sequence number
+    mapping = zip(vocabulary, range(len(vocabulary)))
+    print("vocabulary created...")
 
 
 if __name__ == '__main__':
